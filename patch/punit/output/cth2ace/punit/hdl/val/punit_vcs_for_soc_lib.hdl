@@ -1,0 +1,48 @@
+my $punit_root = &ToolConfig::get_tool_path("PUNIT_ROOT");
+$hdl_spec = {
+		-hdl_spec => [
+			],
+		-vlog_files => [
+			"/p/hdk/rtl/proj_tools/macros_mapping/17.02.03/INTEL_GLOBAL_MACROS.vh",
+			"src/val/subIP/imh_vc/src/imh_reg_pkg/imh_vc_reg_pkg.sv",
+			"src/val/agents/punit_ram_utils_pkg/punit_ram_utils_pkg.sv",
+			"src/val/subIP/imh_vc/src/imh_vc_env_pkg.sv",
+			"src/val/subIP/imh_vc/connect/imh_ti.sv",
+			"src/val/subIP/ccp_vc/punit_ccp_vc_ti.sv",
+			"src/val/subIP/ccp_vc/ccp_vc_env_pkg.sv",
+			"src/val/subIP/ccp_vc/punit_ccp_vc_env_if.sv",
+			"src/val/subIP/cc_ip_vc/src/chassis_compliant_ip_vc_pkg.sv",
+			"src/val/subIP/cc_ip_vc/verif/tb/chassis_compliant_ip_vc_ti.sv",
+			],
+		-vlog_incdirs => [
+			"$ENV{UVM_HOME}/src",
+			"$punit_root",
+			"src/val/env/common",
+			"$ENV{SAOLA_HOME}/verilog",
+			"$ENV{SAOLA_HOME}/verilog_uvm",
+			"src/val/agents/punit_ram_utils_pkg",
+			"src/val/subIP/imh_vc/src",
+			"src/val/subIP/imh_vc/src",
+			"src/val/subIP/imh_vc/src/imh_reg_pkg",
+			"src/val/subIP/imh_vc/src/imh_reg_pkg/regs",
+			"src/val/subIP/imh_vc/src/imh_clocks",
+			"src/val/subIP/imh_vc/src/imh_scheduler",
+			"src/val/subIP/imh_vc/connect",
+			"$ENV{VAL_SVTB_COMMON}",
+			"src/val/subIP/ccp_vc",
+			"src/val/subIP/cc_ip_vc",
+			"src/val/subIP/cc_ip_vc/src",
+			"src/val/subIP/cc_ip_vc/src/configs",
+			"src/val/subIP/cc_ip_vc/src/seqlib",
+			"src/val/subIP/cc_ip_vc/src/components",
+			],
+		-vlog_lib_dirs => [
+			"src/val/agents/punit_ram_utils_pkg/",
+			"src/val/subIP/imh_vc/src",
+			],
+		-vlog_lib_files => [
+			],
+		-vlog_opts => [
+			"$ENV{UVM_HOME}/src/uvm_macros.svh",
+			],
+};

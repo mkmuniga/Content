@@ -1,0 +1,33 @@
+<Storage_Uploader_config>
+    <CommonFields>
+    </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+    <Resource type="text" name="" delimiter="|" selector="common" path="tlm_post/ccf_replay_base_env/ccf_clk_period_trk.log*">
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="CLK" type="string" />
+            <Column name="TIMEPERIOD" type="string" />
+        </Columns>
+    </Resource>
+    <Resource type="text" name="" delimiter="|" selector="santaq" path="tlm_post/ccf_replay_base_env/ccf_santa_*_queue_trk.log*">
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="UNIT" type="string" />
+            <Column name="TID" type="string" />
+            <Column name="LID" type="string" />
+            <Column name="PID" type="string" />
+            <Column name="DIRECTION" type="string" />
+            <Column name="QUEUE" type="string" />
+        </Columns>
+    </Resource>
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

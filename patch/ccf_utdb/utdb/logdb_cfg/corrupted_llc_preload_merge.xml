@@ -1,0 +1,42 @@
+<Storage_Uploader_config>
+    <CommonFields>
+        <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+        <Column name="UNIT" type="string" />
+     </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+
+    <Resource type="text" name="" delimiter="|" selector="corrupted_llc_preload" path="corrupted_llc_preload_*_trk.log*">
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+
+            <Column name="UNIT" type="string" />
+            <Column name="ADDRESS" type="string" />
+            <Column name="SET" type="string" />
+            <Column name="WAY" type="string" />
+            <Column name="MAP" type="string" />
+            <Column name="STATE" type="string" />
+            <Column name="CV" type="string" />
+            <Column name="DATA" type="string" />
+            <Column name="POISON" type="string" />
+            <Column name="ECC" type="string" />
+            <Column name="TAG" type="string" />
+            <Column name="LRU" type="string" />
+            <Column name="DATA_ER" type="string" />
+            <Column name="TAG_ER" type="string" />
+            <Column name="STMAP_ER" type="string" />
+            <Column name="CV_ER" type="string" />
+            <Column name="ORIG_ADDR" type="string" />
+            <Column name="ORIG_ECC" type="string" />
+        </Columns>
+    </Resource>
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

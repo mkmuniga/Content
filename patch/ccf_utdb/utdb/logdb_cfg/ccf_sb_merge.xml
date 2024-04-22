@@ -1,0 +1,40 @@
+<Storage_Uploader_config>
+    <CommonFields>
+    </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+    <Resource type="text" name="" delimiter="|" selector="sideband" path="gpsb/*">
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="DIR" type="string" />
+            <Column name="TYPE" type="string" />
+            <Column name="PER" type="string" />
+            <Column name="SPID" type="string" />
+            <Column name="LSPID" type="string" />
+            <Column name="DPID" type="string" />
+            <Column name="LDPID" type="string" />
+            <Column name="OPC" type="string" />
+            <Column name="TAG" type="string" />
+            <Column name="MISC" type="string" />
+            <Column name="EH" type="string" />
+            <Column name="BE" type="string" />
+            <Column name="FID" type="string" />
+            <Column name="BAR" type="string" />
+            <Column name="DATALEN" type="string" />
+            <Column name="ADDRLEN" type="string" />
+            <Column name="RSP" type="string" />
+            <Column name="SAI" type="string" />
+            <Column name="Address" type="string" />
+            <Column name="Data" type="string" />
+        </Columns>
+    </Resource>
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

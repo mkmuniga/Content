@@ -1,0 +1,15 @@
+Inputs,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18
+flow_section,Row,Flow,initial_cache_state,initial_map,initial_cv,snoop_sent,monitor_hit,snoop_rsp,upi_cmp,upi_write,Match Initial State,Match CmpO,Final State,Final CV,Kept initial CV,Req CV 
+HIT,1,RFO/RFO_PREF,M/E,DWAY,0,0,X,X,X,X,1,0,M/E,1,0,1
+Read Mem,2,RFO/RFO_PREF,I,X,X,X,0,X,E_CmpO/M_CmpO,X,0,1,M/E,1,0,1
+Read Mem,3,RFO/RFO_PREF,S,X,0,X,0,X,E_CmpO/M_CmpO,X,0,1,M/E,1,0,1
+Read Mem,4,RFO/RFO_PREF,E/M,SF,0,X,0,X,E_CmpO/M_CmpO,X,0,1,M/E,1,0,1
+Snoop + Read Mem,5,RFO/RFO_PREF,S,X,>0,1,X,X,E_CmpO/M_CmpO,X,0,1,M/E,1,0,1
+Snoop + Read Mem,6,RFO/RFO_PREF,E,SF,>0,1,X,RspI,E_CmpO/M_CmpO,X,0,1,M/E,1,0,1
+Snoop + Read Mem,7,RFO/RFO_PREF,S/I,X,X,1,1,X,E_CmpO/M_CmpO,X,0,1,M/E,1,0,1
+Snoop,8,RFO/RFO_PREF,E,X,>0,1,X,RspIFwdFe,X,X,1,0,E,1,0,1
+Snoop,9,RFO/RFO_PREF,E,X,>0,1,X,RspIFwdM,X,1,0,0,E,1,0,1
+Snoop,10,RFO/RFO_PREF,E,X,>0,1,X,RspIFwdM,X,0,0,0,M,1,0,1
+Snoop,11,RFO/RFO_PREF,M,X,>0,1,X,RspIFwdFe,X,0,1,0,M,1,0,1
+Snoop,12,RFO/RFO_PREF,M,X,>0,1,X,RspIFwdM,X,1,1,0,E,1,0,1
+Snoop,13,RFO/RFO_PREF,M,X,>0,1,X,RspIFwdM,X,0,1,0,M,1,0,1

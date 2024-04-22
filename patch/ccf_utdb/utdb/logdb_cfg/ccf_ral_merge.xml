@@ -1,0 +1,27 @@
+<Storage_Uploader_config>
+    <CommonFields>
+    </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+
+    <Resource type="text" name="" delimiter="|" selector="register" path="tlm_post/ccf_replay_base_env/register_*_trk.log*">
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="UNIT" type="string" />
+            <Column name="SIGNAL_PATH" type="string" />
+            <Column name="TYPE" type="string" />
+            <Column name="REG" type="string" />
+            <Column name="FIELD" type="string" />
+            <Column name="VALUE" type="BIGINT UNSIGNED" />
+	    </Columns>
+    </Resource>
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<Storage_Uploader_config>
+    <CommonFields>
+        <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+        <Column name="UNIT" type="string" />
+        <Column name="TID" type="string" />
+        <Column name="LID" type="string" />
+        <Column name="PID" type="string" />
+     </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+
+    <Resource type="text" name="" delimiter="|" selector="gcfi" path="tlm_post/ccf_replay_base_env/ccf_gcfi_trk_*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="GCFI_UNIT" type="string" alias="UNIT" />
+            <Column name="Santa_port_ID" type="int" />
+            <Column name="TID" type="string" />
+            <Column name="LID" type="string" />
+            <Column name="PID" type="string" />
+            <Column name="PROTOCOL_ID" type="string" />
+            <Column name="EOP" type="int" />
+            <Column name="OPCODE" type="string" />
+            <Column name="RTID" type="int" />
+            <Column name="CoreID" type="int" />
+            <Column name="CboID" type="int" />
+            <Column name="TORID" type="int" />
+            <Column name="RspID" type="int" />
+            <Column name="TC" type="int" />
+         </Columns>
+    </Resource>
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

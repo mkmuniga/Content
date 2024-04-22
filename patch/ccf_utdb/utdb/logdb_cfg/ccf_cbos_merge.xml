@@ -1,0 +1,34 @@
+<Storage_Uploader_config>
+    <CommonFields>
+        <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+        <Column name="TID" type="string" />
+     </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+
+    <Resource type="text" name="" delimiter="|" selector="cpipe" path="tlm_post/ccf_replay_base_env/cbo_*_trk.log*" >
+        <Columns>
+            <Column name="Time" type="BIGINT unsigned" alias="TIME" time_unit="ps" />
+            <Column name="Unit" type="string" alias="UNIT" />
+            <Column name="TID" type="string" />
+            <Column name="LID" type="string" />
+            <Column name="PID" type="string" />
+            <Column name="Address" type="string" alias="ADDRESS" />
+            <Column name="Req" type="string" alias="REQ" />
+            <Column name="Qid" type="string" alias="QID" />
+            <Column name="Ring" type="string" alias="RING" />
+            <Column name="msg" type="string" alias="MSG" />
+            <Column name="RT" type="string" />
+            <Column name="misc" type="string" alias="MISC" />
+        </Columns>
+    </Resource>
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

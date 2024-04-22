@@ -1,0 +1,16 @@
+<Storage_Uploader_config>
+    <Resource type="Text" name="TRACKER_NAME"  selector="greet" delimiter="|" path="TRACKER_NAME.log" >
+        <BeginRegex>^\d+</BeginRegex>
+        <EndRegex></EndRegex>
+        <ValidRegex></ValidRegex>
+        <Columns>
+<!--        <Column name="TIME"        type="BIGINT" time_unit="ps" " /> -->
+<!--        <Column name=""            type="string" " />         -->
+<!--        ... FILL ALL COLUMNS ...                              -->
+<!--                                                              -->
+<!--        More options can be found at:                         -->
+<!--        firefox https://dtspedia.intel.com/Storage_Uploader & -->
+
+        </Columns>
+    </Resource>
+</Storage_Uploader_config>

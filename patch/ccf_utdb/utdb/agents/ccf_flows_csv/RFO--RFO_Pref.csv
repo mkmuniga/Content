@@ -1,0 +1,37 @@
+Inputs,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,24,27,28,Expected Interfaces,output from Cpipe,24,25,28,29,30,input to Cpipe,32,33,36,37,38
+Flow Section,Row Number,Row Enable ,Flow ,Bubble,Sad,Curr Opcode,Snoop response,LLC State,CV,Map,MonHit,CN,AvailData,SelfSnoop,SnoopConflict,FwdCnfltO,FreeInvWay,HadReject,CleanEvict,DeadDBP,ReqCV,SRP_en,SRP_HR_Fill,HadBogus,Pref_Promotion,MiscCondition,Next Bubble,IDI_U2C_REQ,IDI_U2C_RSP,IDI_U2C_DATA,UXI_C2U_REQ,UXI_C2U_DATA,UXI_C2U_RSP,CPIPE_REQ,IDI_C2U_RSP,IDI_C2U_DATA,UXI_U2C_REQ,UXI_U2C_RSP,UXI_U2C_DATA
+First Pass,1,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,E/M,0,D,0,1,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=0,a,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,2,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,E/M,0,D,0,0,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=0,b,0,0,0,0,0,0,X,0,0,0,0,0
+snoop,3,1,RFO/RFO_PRef,a,HOM,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),data(core_logic_id),0,0,0,X,0,0,0,0,0
+Hit,4,1,RFO/RFO_PRef,b,HOM,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),data(core_logic_id),0,0,0,X,0,0,0,0,0
+First Pass,5,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,E/M/S,>0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=0,c,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,6,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=0,c,0,0,0,0,0,0,X,0,0,0,0,0
+snoop- RspNack,7,1,RFO_PRef,c,HOM,X,RspNack,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,g,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),0,0,0,0
+snoop- RspNack,8,1,RFO_PRef,g,HOM,SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,GO_NoGo(core_logic_id),0,0,0,0,X,0,0,0,0,0
+snoop,9,1,RFO/RFO_PRef,c,HOM,X,!RspNack,E/M,X,D,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,d,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+snoop,10,1,RFO/RFO_PRef,c,HOM,X,RspIFwdFE,E/M,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,d,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+snoop,11,1,RFO/RFO_PRef,c,HOM,X,RspIFwdMO,E/M,X,X,X,1,1,X,X,X,X,X,X,X,X,X,X,X,X,X,d,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+snoop,12,1,RFO/RFO_PRef,c,HOM,X,RspIFwdMO,X,X,X,X,1,0,X,X,X,X,X,X,X,X,X,X,X,X,X,t,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+snoop,13,1,RFO/RFO_PRef,c,HOM,X,RspIFwd.*,E/M,X,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,f,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+snoop,14,1,RFO/RFO_PRef,c,HOM,X,!RspNack,E/M,X,D,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,f,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+snoop,15,1,RFO/RFO_PRef,c,HOM,X,!RspNack,S,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,read_mem,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+snoop,16,1,RFO/RFO_PRef,c,HOM,X,RspI/RspIhitFSE/RspIHitI/RspSI/RspFlushed,!LLC_S,X,SF,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,read_mem,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),0,0,0,0
+snoop,17,1,RFO/RFO_PRef,d,HOM,SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),data(core_logic_id),0,0,0,X,0,0,0,0,0
+snoop,18,1,RFO/RFO_PRef,t,HOM,SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,h,0,GO(core_logic_id),data(core_logic_id),0,0,0,FakeCycle,0,0,0,0,0
+snoop,19,1,RFO/RFO_PRef,h,HOM,FakeCycle,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,0,0,0,WbMtoE,0,X,0,0,0,CmpU,0
+snoop,20,1,RFO/RFO_PRef,f,HOM,SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),data(core_logic_id),0,0,0,X,0,0,0,0,0
+First Pass,21,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,I,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=0,read_mem,0,0,0,0,0,0,x,0,0,0,0,0
+First Pass,22,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,S,0,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=0,read_mem,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,23,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,E/M,0,SF,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=0,read_mem,0,0,0,0,0,0,X,0,0,0,0,0
+read_mem,24,1,RFO/RFO_PRef,read_mem,HOM,readforownership/RFO_PRef/SNP_RSP,X,X,X,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,p,0,0,0,0,0,0,X,0,0,0,0,0
+read_mem,25,1,RFO/RFO_PRef,read_mem,HOM,readforownership/RFO_PRef/SNP_RSP,X,X,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,r,0,0,0,0,0,0,X,0,0,0,0,0
+read_mem,26,1,RFO/RFO_PRef,p,HOM,readforownership/SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,q,0,0,0,RdInvOwn,0,0,E_CmpO/M_CmpO,0,0,0,E_CmpO/M_CmpO,data(direct2core)
+read_mem,27,1,RFO/RFO_PRef,p,HOM,RFO_PREF/SNP_RSP,X,!LLC_I,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,q,0,0,0,RdInvOwn,0,0,E_CmpO/M_CmpO,0,0,0,E_CmpO/M_CmpO,data(direct2core)
+read_mem,28,1,RFO/RFO_PRef,p,HOM,RFO_PREF/SNP_RSP,X,I,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,q,0,0,0,RdInvOwn,0,0,E_CmpO/M_CmpO,0,0,0,E_CmpO/M_CmpO,data(direct2core)
+read_mem,29,1,RFO/RFO_PRef,p,HOM,RFO_PREF,X,I,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,q,0,0,0,RdInvOwnLP,0,0,E_CmpO/M_CmpO,0,0,0,E_CmpO/M_CmpO,data(direct2core)
+read_mem,30,1,RFO/RFO_PRef,q,HOM,E_CmpO/M_CmpO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),(direct2core_logic_id),0,0,0,X,0,0,0,0,0
+read_mem,31,1,RFO/RFO_PRef,r,HOM,X,X,X,X,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,s,0,0,0,RdInv,0,0,E_CmpO,0,0,0,E_CmpO,data
+read_mem,32,1,RFO/RFO_PRef,r,HOM,X,X,X,X,X,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,q,0,0,0,RdInv,0,0,E_CmpO,0,0,0,E_CmpO,data(direct2core)
+read_mem,33,1,RFO/RFO_PRef,s,HOM,E_CmpO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),data(core_logic_id),0,0,0,X,0,0,0,0,0
+First Pass - promotion,34,1,RFO/RFO_PRef,first,HOM,readforownership/RFO_PRef,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_promotion=1,promoted,0,0,0,0,0,0,M_CmpO/E_CmpO,0,0,0,0,0
+prefetch promotion,35,1,RFO/RFO_PRef,promoted,HOM,M_CmpO/E_CmpO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,prefetch_upi_rd=RdInvOwnLP,Done,0,GO(core_logic_id),data(direct2core_logic_id),0,0,0,X,0,0,0,0,0

@@ -1,0 +1,154 @@
+<Storage_Uploader_config>
+    <CommonFields>
+        <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+        <Column name="TID" type="string" />
+     </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+
+    <Resource type="text" name="" delimiter="|" selector="idi" path="idi.log*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="UNIT" type="string" />
+            <Column name="TID" type="string" />
+            <Column name="LID" type="string" />
+            <Column name="PID" type="string" />
+            <Column name="ADDRESS" type="string" />
+            <Column name="OPCODE" type="string" />
+            <Column name="TYPE" type="string" />
+            <Column name="HASH" type="string" />
+            <Column name="CQID" type="string" />
+            <Column name="UQID" type="string" />
+            <Column name="LPID" type="string" />
+            <Column name="SRC_TGT" type="string" />
+            <Column name="PARITY" type="string" />
+            <Column name="PARITY_ERR" type="string" />
+            <Column name="DATA_ERR" type="string" />
+            <Column name="POISON" type="string" />
+            <Column name="TRACE" type="string" />
+            <Column name="ATTRIBUTES" type="string" />
+            <Column name="CHUNK" type="string" />
+            <Column name="DATA" type="string" />
+            <Column name="EVENT" type="string" />
+        </Columns>
+    </Resource>
+    
+    <Resource type="text" name="" delimiter="|" selector="cfi" path="cfi_trk.log*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="VC_NAME" type="string" alias="UNIT" />
+            <Column name="URI_TID" type="string" alias="TID" />
+            <Column name="URI_LID" type="string" alias="LID" />
+            <Column name="URI_PID" type="string" alias="PID" />
+            <Column name="INTERFACE" type="string" />
+	        <Column name="PROTOCOL_ID" type="string" />
+	        <Column name="PKT_TYPE" type="string" />
+	        <Column name="VC_ID" type="string" />
+	        <Column name="RSPID" type="string" />
+            <Column name="DSTID" type="string" />
+            <Column name="CRNID" type="string" />
+            <Column name="CDNID" type="string" />
+            <Column name="MSG_CLASS" type="string" />
+            <Column name="OPCODE" type="string" />
+            <Column name="ADDRESS" type="string" />
+	        <Column name="RTID" type="string" />
+            <Column name="HTID" type="string" />
+            <Column name="GO" type="string" />
+            <Column name="PAR" type="string" />
+            <Column name="EOP" type="string" />
+            <Column name="CHUNK" type="string" />
+            <Column name="DATA_3" type="string" />
+            <Column name="DATA_2" type="string" />
+            <Column name="DATA_1" type="string" />
+            <Column name="DATA_0" type="string" />
+            <Column name="D_PAR" type="string" />
+            <Column name="PAR_ERR" type="string" />
+            <Column name="RCTRL" type="string" />
+            <Column name="TRACE_PKT" type="string" />
+            <Column name="CLK_CNT" type="string" />
+            <Column name="MISC" type="string" />
+        </Columns>
+    </Resource>
+
+    <Resource type="text" name="" delimiter="|" selector="racu_sb" path="CCF_IOSF_NCRACU_TRK_REPLAY.log*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="TID" type="string" />
+            <Column name="TYPE" type="string" />
+            <Column name="SPID" type="string" />
+            <Column name="LSPID" type="string" />
+            <Column name="DPID" type="string" />
+            <Column name="LDPID" type="string" />
+	        <Column name="OPCODE" type="string" />
+            <Column name="ADDRESS" type="string" />
+            <Column name="DATA" type="string" />
+            <Column name="BE" type="string" />
+            <Column name="EH" type="string" />
+            <Column name="SAI" type="string" />
+            <Column name="RSP" type="string" />
+            <Column name="ADDRLEN" type="string" />
+            <Column name="TAG" type="string" />
+            <Column name="BAR" type="string" />
+            <Column name="FID" type="string" />
+            <Column name="MISC" type="string" />
+        </Columns>
+    </Resource>
+<Resource type="text" name="" delimiter="|" selector="ufi" path="ufi_trk.log*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="VC_NAME" type="string" alias="UNIT" />
+            <Column name="UFI_ID" type="string"/>
+            <Column name="IFC_TYPE" type="string"/>
+            <Column name="PROTOCOL" type="string"/>
+            <Column name="URI_TID" type="string" alias="TID" />
+            <Column name="URI_LID" type="string" alias="LID" />
+            <Column name="URI_PID" type="string" alias="PID" />
+            <Column name="CHANNEL" type="string"/>
+	    <Column name="HEADER_TYPE" type="string" />
+            <Column name="VC_ID" type="string"/>
+	    <Column name="OPCODE" type="string" />
+	    <Column name="ADDRESS" type="string" />
+	    <Column name="RTID" type="string" />
+            <Column name="HTID" type="string" />
+            <Column name="CRNID" type="string" />
+            <Column name="CDNID" type="string" />
+            <Column name="HDNID" type="string" />
+	    <Column name="HNID" type="string" />
+            <Column name="ADDRESS_PAR" type="string" />
+            <Column name="CLOS" type="string" />
+            <Column name="TEE" type="string" />
+            <Column name="PCLS" type="string" />
+            <Column name="MEMLOCK" type="string" />
+            <Column name="TSXABORT" type="string" />
+            <Column name="PARAM_A" type="string" />
+            <Column name="MSG_TYPE" type="string" />
+            <Column name="SAI" type="string" />
+            <Column name="LOW_ADDR" type="string" />
+	    <Column name="LENGTH" type="string" />
+            <Column name="RSVD" type="string" />
+            <Column name="CHUNK" type="string" />
+            <Column name="PAYLOAD_DATA" type="string" />
+            <Column name="POISON" type="string" />
+            <Column name="PAYLOAD_PARITY" type="string" />
+            <Column name="PAYLOAD_RSVD" type="string" />
+            <Column name="P0_PAYLOAD_ECC_VALID" type="string" />
+            <Column name="P0_PAYLOAD_ECC" type="string" />
+            <Column name="P1_PAYLOAD_ECC_VALID" type="string" />
+            <Column name="P1_PAYLOAD_ECC" type="string" />
+            <Column name="LOGDB_FAIL" type="string" />
+            <Column name="CYCLE" type="string"/>
+            <Column name="HEADER" type="string" />
+
+        </Columns>
+    </Resource>
+
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+    %audf = (
+        HDLSpec => {
+             cccf => {
+                 libs => {
+
+
+
+                ##############################################
+                ############## rtl libs ######################
+                ##############################################
+
+
+                ###  For DUT - 'ccf ###########################
+
+
+                ### flattened RTL lib (HIPs/SIPs are flattened into DUT rtl lib)  ###########################
+
+                     ccf_rtl_lib => {
+                         -hdl_spec => [
+                             "output/cth2ace/cccf/hdl/dut/ccf/ccf_rtl_lib.hdl",
+                         ],
+                     },
+
+
+
+                ##############################################
+                ############## val libs ######################
+                ##############################################
+
+                     ccf_env_lib => {
+                         -hdl_spec => [
+                             "output/cth2ace/cccf/hdl/val/ccf_env_lib.hdl",
+                         ],
+                         -dependent_libs => [
+                             'sip_shared_lib',
+                             'ccf_val_params_lib',
+                         ],
+                         -tag =>  "nonsynth+validation",
+                     },
+                     ccf_ti_lib => {
+                         -hdl_spec => [
+                             "output/cth2ace/cccf/hdl/val/ccf_ti_lib.hdl",
+                         ],
+                         -dependent_libs => [
+                             'sip_shared_lib',
+                             'ccf_val_params_lib',
+                             'ccf_env_lib',
+                         ],
+                         -tag =>  "nonsynth+validation+jemsw",
+                     },
+                     ccf_jem_replay_lib => {
+                         -hdl_spec => [
+                             "output/cth2ace/cccf/hdl/val/ccf_jem_replay_lib.hdl",
+                         ],
+                         -dependent_libs => [
+                             'sip_shared_lib',
+                             'ccf_val_params_lib',
+                             'ccf_env_lib',
+                             'ccf_ti_lib',
+                             'ccf_val_synth_lib',
+                         ],
+                         -tag =>  "nonsynth+validation+jemsw",
+                     },
+                     ccf_val_params_lib => {
+                         -hdl_spec => [
+                             "output/cth2ace/cccf/hdl/val/ccf_val_params_lib.hdl",
+                         ],
+                         -dependent_libs => [
+                             'sip_shared_lib',
+                         ],
+                         -tag =>  "nonsynth+validation+jemsw",
+                     },
+                     ccf_val_synth_lib => {
+                         -hdl_spec => [
+                             "output/cth2ace/cccf/hdl/val/ccf_val_synth_lib.hdl",
+                         ],
+                         -dependent_libs => [
+                             'sip_shared_lib',
+                             'ccf_val_params_lib',
+                         ],
+                         -tag =>  "nonsynth+validation+jemsw",
+                     },
+                     ccf_8c_val_synth_lib => {
+                         -hdl_spec => [
+                             "output/cth2ace/cccf/hdl/val/ccf_8c_val_synth_lib.hdl",
+                         ],
+                         -dependent_libs => [
+                             'sip_shared_lib',
+                             'ccf_val_params_lib',
+                         ],
+                         -tag =>  "nonsynth+validation+jemsw",
+                     },
+                 },
+             },
+         },
+    );

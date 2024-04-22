@@ -1,0 +1,28 @@
+Inputs,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,Expected Interfaces,output from Cpipe,29,30,33,34,35,input to Cpipe,37,38,41,42,43
+Flow Section,Row Number,Row Enable ,Flow ,Bubble,Sad,Curr Opcode,Snoop response,LLC State,CV,Map,MonHit,CN,AvailData,SelfSnoop,DeadDBP,SnoopConflict,FwdCnfltO,FreeInvWay,CleanEvict,HadReject,ReqCV,SRP_en,SRP_HR_Fill,HadBogus,Pref_Promotion,MiscCondition,Next Bubble,IDI_U2C_REQ,IDI_U2C_RSP,IDI_U2C_DATA,UXI_C2U_REQ,UXI_C2U_DATA,UXI_C2U_RSP,CPIPE_REQ,IDI_C2U_RSP,IDI_C2U_DATA,UXI_U2C_REQ,UXI_U2C_RSP,UXI_U2C_DATA
+First Pass,1,1,WbEFtoI,first,X,WbEFtoI,X,I,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,h,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Miss,2,1,WbEFtoI,h,X,WbEFtoI,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,go_writepull_drop(core_logic_id),0,0,0,0,X,0,0,0,0,0
+First Pass,3,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,D,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,g,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Miss,4,1,WbEFtoI,g,X,WbEFtoI,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,go_writepull_drop(core_logic_id),0,0,0,0,X,0,0,0,0,0
+First Pass,5,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,SF,X,X,1,X,0,X,X,0,X,X,X,X,X,X,X,X,a,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,6,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,SF,X,X,1,X,X,X,X,1,X,X,X,X,X,X,X,X,a,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,7,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,SF,X,X,1,X,1,X,X,0,X,X,X,1,1,X,X,X,a,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Hit,8,1,WbEFtoI,a,X,WbEFtoI,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,1,X,X,c,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp_Bogus,0,bogus_data(core_logic_id),0,0,0
+LLC Hit,9,1,WbEFtoI,a,X,WbEFtoI,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,0,X,X,b,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp,0,data(core_logic_id),0,0,0
+LLC Hit,10,1,WbEFtoI,b,X,No_Rsp,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Hit,11,1,WbEFtoI,c,X,No_Rsp_Bogus,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,12,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,X,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,EvctClnThrottle=1,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,13,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,X,1,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,14,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,>0,X,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,15,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,X,X,X,X,X,1,X,X,X,X,X,X,0,X,X,X,EvctClnThrottle=1,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,16,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,X,1,X,X,X,1,X,X,X,X,X,X,0,X,X,X,X,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,17,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,>0,X,X,X,X,X,1,X,X,X,X,X,X,0,X,X,X,X,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,18,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,X,X,X,X,X,1,X,X,X,X,X,X,X,0,X,X,EvctClnThrottle=1,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,19,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,X,X,1,X,X,X,1,X,X,X,X,X,X,X,0,X,X,X,d,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,20,1,WbEFtoI,first,X,WbEFtoI,X,E/M/S,>0,X,X,X,X,X,1,X,X,X,X,X,X,X,0,X,X,X,d,0,0,0,0,0,0,X,0,0,0,0,0
+Cannot allocated ,4,1,WbEFtoI,d,X,WbEFtoI,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,go_writepull_drop(core_logic_id),0,0,0,0,X,0,0,0,0,0
+First Pass,21,1,WbEFtoI,first,X,WbEFtoI,X,E/S,0,X,0,X,0,X,X,X,X,X,X,X,X,X,X,X,X,EvctClnThrottle=0,e,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,22,1,WbEFtoI,first,X,WbEFtoI,X,E/S,0,X,0,X,X,X,1,X,X,X,X,X,X,0,X,X,X,EvctClnThrottle=0,e,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,23,1,WbEFtoI,first,X,WbEFtoI,X,E/S,0,X,0,X,X,X,1,X,X,X,X,X,X,X,0,X,X,EvctClnThrottle=0,e,0,0,0,0,0,0,X,0,0,0,0,0
+Cannot allocated or no need and send clean evict,4,1,WbEFtoI,e,X,WbEFtoI,X,E,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,go_writepull_drop(core_logic_id),0,EvctCln,0,0,X,0,0,0,CmpU,0
+Cannot allocated or no need and send clean evict,4,1,WbEFtoI,e,X,WbEFtoI,X,S,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,go_writepull_drop(core_logic_id),0,EvctShrd,0,0,X,0,0,0,CmpU,0

@@ -1,0 +1,26 @@
+Inputs,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,24,27,28,Expected Interfaces,output from Cpipe,24,25,28,29,30,input to Cpipe,32,33,36,37,38
+Flow Section,Row Number,Row Enable ,Flow ,Bubble,Sad,Curr Opcode,Snoop response,LLC State,CV,Map,MonHit,CN,AvailData,SelfSnoop,SnoopConflict,FwdCnfltO,FreeInvWay,HadReject,CleanEvict,DeadDBP,ReqCV,SRP_en,SRP_HR_Fill,HadBogus,Pref_Promotion,MiscCondition,Next Bubble,IDI_U2C_REQ,IDI_U2C_RSP,IDI_U2C_DATA,UXI_C2U_REQ,UXI_C2U_DATA,UXI_C2U_RSP,CPIPE_REQ,IDI_C2U_RSP,IDI_C2U_DATA,UXI_U2C_REQ,UXI_U2C_RSP,UXI_U2C_DATA
+First Pass,1,1,CLFlushOPT,first,HOM,CLFlushOPT,X,I,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,no_flush_to_memory,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,2,1,CLFlushOPT,first,HOM,CLFlushOPT,X,S,0,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,no_flush_to_memory,0,0,0,0,0,0,X,0,0,0,0,0
+No Flush To Mem,3,1,CLFlushOPT,no_flush_to_memory,HOM,CLFlushOPT/SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,n ,0,0,0,0,0,0,X,0,0,0,0,0
+No Flush To Mem,4,1,CLFlushOPT,n ,X,CLFlushOPT/SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,o,0,FastGo(core_logic_id),0,InvXtoI,0,0,SI_CmpO,0,0,0,SI_CmpO,0
+No Flush To Mem,5,1,CLFlushOPT,o,X,SI_CmpO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+First Pass,6,1,CLFlushOPT,first,HOM,CLFlushOPT,X,E/M,0,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,flush_mem,0,0,0,0,0,0,X,0,0,0,0,0
+Flush to Memory,7,1,CLFlushOPT,flush_mem,HOM,CLFlushOPT,X,E,0,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,EvctClnThrottle=0,c,0,0,0,0,0,0,X,0,0,0,0,0
+Flush to Memory,8,1,CLFlushOPT,c,X,CLFlushOPT,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,FastGo_ExtCmp(core_logic_id),0,EvctCln,0,0,X,0,0,0,CmpU,0
+Flush to Memory,9,1,CLFlushOPT,flush_mem,HOM,CLFlushOPT,X,E,0,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,EvctClnThrottle=1,d,0,0,0,0,0,0,X,0,0,0,0,0
+Flush to Memory,10,1,CLFlushOPT,d,X,CLFlushOPT,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,FastGo_ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+Flush to Memory,11,1,CLFlushOPT,flush_mem,HOM,CLFlushOPT,X,M,0,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,a,0,0,0,0,0,0,X,0,0,0,0,0
+Flush to Memory,12,1,CLFlushOPT,a,X,CLFlushOPT,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,b,0,FastGo(core_logic_id),0,0,WbMtoI,0,CmpU,0,0,0,CmpU,0
+Flush to Memory,13,1,CLFlushOPT,b,X,CmpU,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+Snoop Flow,14,1,CLFlushOPT,first,HOM,CLFlushOPT,X,X,>0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,e,0,0,0,0,0,0,X,0,0,0,0,0
+Snoop Flow,15,1,CLFlushOPT,first,HOM,CLFlushOPT,X,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,e,0,0,0,0,0,0,X,0,0,0,0,0
+Snoop Flow,16,1,CLFlushOPT,e,X,CLFlushOPT,RspI.*/RspIHit.*/RspFlushed,S/I,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,no_flush_to_memory,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),0,0,0,0
+Snoop Flow,17,1,CLFlushOPT,e,X,CLFlushOPT,RspIFwdFE/RspIHit.*/RspFlushed,E,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,EvctClnThrottle=0,f,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),0,0,0,0
+Snoop Flow,18,1,CLFlushOPT,f ,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,FastGo_ExtCmp(core_logic_id),0,EvctCln,0,0,X,0,0,0,CmpU,0
+Snoop Flow,19,1,CLFlushOPT,e,X,CLFlushOPT,RspIFwdFE/RspIHit.*/RspFlushed,E,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,EvctClnThrottle=1,g,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),0,0,0,0
+Snoop Flow,20,1,CLFlushOPT,g,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,FastGo_ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+Snoop Flow,21,1,CLFlushOPT,e,X,CLFlushOPT,X,M,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,h,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+Snoop Flow,22,1,CLFlushOPT,e,X,CLFlushOPT,RspIFwdMO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,h,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+Snoop Flow,23,1,CLFlushOPT,h,X,SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,I,0,FastGo(core_logic_id),0,0,WbMtoI,0,CmpU,0,0,0,CmpU,0
+Snoop Flow,24,1,CLFlushOPT,I,X,CmpU,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0

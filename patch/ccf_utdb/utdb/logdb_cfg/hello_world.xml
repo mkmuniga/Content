@@ -1,0 +1,15 @@
+<Storage_Uploader_config>
+
+   <Resource type="Text" name="hello_world"  selector="greet" delimiter="|" path="hello_world.log" >
+    
+    <BeginRegex>^\d+</BeginRegex>
+    <EndRegex></EndRegex>
+    <ValidRegex></ValidRegex>
+    <Columns>
+      <Column name="Time"        type="BIGINT" time_unit="s" alias="TIME" />
+      <Column name="Event"       type="string" alias="EVENT" />
+      <Column name="State"       type="string" alias="STATE"/>
+    </Columns>
+  </Resource>
+ 
+</Storage_Uploader_config>

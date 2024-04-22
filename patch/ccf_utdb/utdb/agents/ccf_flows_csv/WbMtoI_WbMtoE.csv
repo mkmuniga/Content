@@ -1,0 +1,16 @@
+Inputs,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,24,27,28,Expected Interfaces,output from Cpipe,25,26,29,30,31,input to Cpipe,33,34,37,38,39
+Flow Section,Row Number,Row Enable ,Flow ,Bubble,Sad,Curr Opcode,Snoop response,LLC State,CV,Map,MonHit,CN,AvailData,SelfSnoop,SnoopConflict,FwdCnfltO,FreeInvWay,HadReject,CleanEvict,DeadDBP,ReqCV,SRP_en,SRP_HR_Fill,HadBogus,Pref_Promotion,MiscCondition,Next Bubble,IDI_U2C_REQ,IDI_U2C_RSP,IDI_U2C_DATA,UXI_C2U_REQ,UXI_C2U_DATA,UXI_C2U_RSP,CPIPE_REQ,IDI_C2U_RSP,IDI_C2U_DATA,UXI_U2C_REQ,UXI_U2C_RSP,UXI_U2C_DATA
+First Pass,1,1,WbMtoI/WbMtoE,first,X,WbMtoI/WbMtoE,X,I/S,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,1,X,X,h,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Miss,2,1,WbMtoI/WbMtoE,h,X,WbMtoI/WbMtoE,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,1,X,X,i,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp_Bogus,0,bogus_data(core_logic_id),0,0,0
+LLC Miss,3,1,WbMtoI/WbMtoE,i,X,No_Rsp_Bogus,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,1,X,X,done,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,4,1,WbMtoI/WbMtoE,first,X,WbMtoI/WbMtoE,X,E/M,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,a,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Hit,5,1,WbMtoI/WbMtoE,a,X,WbMtoI/WbMtoE,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,1,X,X,b,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp_Bogus,0,bogus_data(core_logic_id),0,0,0
+LLC Hit,6,1,WbMtoI/WbMtoE,b,X,No_Rsp_Bogus,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,1,X,X,done,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Hit,7,1,WbMtoI/WbMtoE,a,X,WbMtoI/WbMtoE,X,E/M,X,X,X,X,1,X,X,X,X,X,X,0,X,X,X,0,X,X,c,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp,0,data(core_logic_id),0,0,0
+LLC Hit,8,1,WbMtoI/WbMtoE,a,X,WbMtoI/WbMtoE,X,E/M,X,X,X,X,1,X,X,X,1,X,X,X,X,X,X,0,X,X,c,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp,0,data(core_logic_id),0,0,0
+LLC Hit,9,1,WbMtoI/WbMtoE,a,X,WbMtoI/WbMtoE,X,E/M,X,X,X,X,0,X,X,X,X,X,X,X,X,X,X,0,X,X,d,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp,0,data(core_logic_id),0,0,0
+LLC Hit,10,1,WbMtoI/WbMtoE,a,X,WbMtoI/WbMtoE,X,E/M,X,X,X,X,X,X,X,X,0,X,X,1,X,X,X,0,X,X,d,0,GO_WRITEPULL(core_logic_id),0,0,0,0,No_Rsp,0,data(core_logic_id),0,0,0
+LLC Hit,11,1,WbMtoI/WbMtoE,c,X,No_Rsp,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,0,X,X,done,0,0,0,0,0,0,X,0,0,0,0,0
+LLC Hit,12,1,WbMtoI,d,X,No_Rsp,X,X,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,0,X,X,done,0,0,0,0,WbMtoI,0,X,0,0,0,CmpU,0
+LLC Hit,13,1,WbMtoI,d,X,No_Rsp,X,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,0,X,X,done,0,0,0,0,WbMtoS,0,X,0,0,0,CmpU,0
+LLC Hit,14,1,WbMtoE,d,X,No_Rsp,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,0,X,X,done,0,0,0,0,WbMtoE,0,X,0,0,0,CmpU,0

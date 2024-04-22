@@ -1,0 +1,18 @@
+Inputs,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,24,27,28,Expected Interfaces,output from Cpipe,24,25,28,29,30,input to Cpipe,32,33,36,37,38
+Flow Section,Row Number,Row Enable ,Flow ,Bubble,Sad,Curr Opcode,Snoop response,LLC State,CV,Map,MonHit,CN,AvailData,SelfSnoop,SnoopConflict,FwdCnfltO,FreeInvWay,HadReject,CleanEvict,DeadDBP,ReqCV,SRP_en,SRP_HR_Fill,HadBogus,Pref_Promotion,MiscCondition,Next Bubble,IDI_U2C_REQ,IDI_U2C_RSP,IDI_U2C_DATA,UXI_C2U_REQ,UXI_C2U_DATA,UXI_C2U_RSP,CPIPE_REQ,IDI_C2U_RSP,IDI_C2U_DATA,UXI_U2C_REQ,UXI_U2C_RSP,UXI_U2C_DATA
+First Pass,1,1,NC_/WiL/WiLF,first,!HOM,WiL/WiLF,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,z,0,0,0,0,0,0,X,0,0,0,0,0
+FakeCycle,2,1,NC_/WiL/WiLF,z,CRABABORT,WiL/WiLF,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,b,0,0,0,0,0,0,FakeCycle,0,0,0,0,0
+CRABABORT,3,1,NC_/WiL/WiLF,b,X,FakeCycle,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,c,0,Writepull(core_logic_id),0,0,0,0,NO_RSP,0,data(core_logic_id),0,0,0
+CRABABORT,4,1,NC_/WiL/WiLF,c,X,NO_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),0,0,0,0,X,0,0,0,0,0
+FakeCycle,5,1,NC_/WiL/WiLF,z,CFG/MMIO,WiL/WiLF,X,X,>0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,d,0,0,0,0,0,0,FakeCycle,0,0,0,0,0
+Snoop,7,1,NC_/WiL/WiLF,d,X,FakeCycle,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,write_mem,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+FakeCycle,8,1,NC_/WiL/WiLF,z,CFG/MMIO,WiL/WiLF,X,I,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,write_mem,0,0,0,0,0,0,FakeCycle,0,0,0,0,0
+FakeCycle,9,1,NC_/WiL/WiLF,z,CFG/MMIO,WiL/WiLF,X,E/M/S,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,write_mem,0,0,0,0,0,0,FakeCycle,0,0,0,0,0
+Write_NC,10,1,NC_/WiL/WiLF,write_mem,X,SNP_RSP/FakeCycle,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,e,0,0,0,0,0,0,X,0,0,0,0,0
+Write_NC,11,1,NC_/WiL,e,CFG,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,f,0,Writepull(core_logic_id),0,0,0,0,NO_RSP,0,data(core_logic_id),0,0,0
+Write_NC,12,1,NC_/WiL,e,MMIO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,g,0,Writepull(core_logic_id),0,0,0,0,NO_RSP,0,data(core_logic_id),0,0,0
+Write_NC,13,1,NC_/WiLF,e,MMIO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,h,0,Writepull(core_logic_id),0,0,0,0,NO_RSP,0,data(core_logic_id),0,0,0
+Write_NC,14,1,NC_/WiL/WiLF,f,X,NO_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,I ,0,0,0,0,NcCfgWr,0,CmpU,0,0,0,NCCmpU,0
+Write_NC,15,1,NC_/WiL/WiLF,g,X,NO_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,I ,0,0,0,0,NcWrPtl,0,CmpU,0,0,0,NCCmpU,0
+Write_NC,16,1,NC_/WiL/WiLF,h,X,NO_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,I ,0,0,0,0,NcWr,0,CmpU,0,0,0,NCCmpU,0
+Write_NC,17,1,NC_/WiL/WiLF,I,X,CmpU,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,Done,0,GO(core_logic_id),0,0,0,0,X,0,0,0,0,0

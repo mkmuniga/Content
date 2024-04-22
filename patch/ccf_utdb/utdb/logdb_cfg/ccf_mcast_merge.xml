@@ -1,0 +1,92 @@
+
+<Storage_Uploader_config>
+    <CommonFields>
+        <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+     </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+   
+    <Resource type="text" name="" delimiter="|" selector="cfi" path="cfi_trk.log*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="VC_NAME" type="string" alias="UNIT" />
+            <Column name="URI_TID" type="string" alias="TID" />
+            <Column name="URI_LID" type="string" alias="LID" />
+            <Column name="URI_PID" type="string" alias="PID" />
+            <Column name="INTERFACE" type="string" />
+	        <Column name="PROTOCOL_ID" type="string" />
+	        <Column name="PKT_TYPE" type="string" />
+	        <Column name="VC_ID" type="string" />
+	        <Column name="RSPID" type="string" />
+            <Column name="DSTID" type="string" />
+            <Column name="MSG_CLASS" type="string" />
+            <Column name="OPCODE" type="string" />
+            <Column name="ADDRESS" type="string" />
+	        <Column name="RTID" type="string" />
+            <Column name="HTID" type="string" />
+            <Column name="GO" type="string" />
+            <Column name="PAR" type="string" />
+            <Column name="EOP" type="string" />
+            <Column name="CHUNK" type="string" />
+            <Column name="DATA_3" type="string" />
+            <Column name="DATA_2" type="string" />
+            <Column name="DATA_1" type="string" />
+            <Column name="DATA_0" type="string" />
+	        <Column name="D_PAR" type="string" />
+            <Column name="PAR_ERR" type="string" />
+            <Column name="RCTRL" type="string" />
+            <Column name="TRACE_PKT" type="string" />
+            <Column name="CLK_CNT" type="string" />
+            <Column name="MISC" type="string" />
+        </Columns>
+    </Resource>
+   
+    <Resource type="text" name="racu_sb" delimiter="|" selector="racu_sb" path="CCF_IOSF_NCRACU_TRK.log*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="TID" type="string" />
+            <Column name="TYPE" type="string" />
+            <Column name="SPID" type="string" />
+            <Column name="LSPID" type="string" />
+            <Column name="DPID" type="string" />
+            <Column name="LDPID" type="string" />
+	        <Column name="OPCODE" type="string" />
+            <Column name="ADDRESS" type="string" />
+            <Column name="DATA" type="string" />
+            <Column name="BE" type="string" />
+            <Column name="EH" type="string" />
+            <Column name="SAI" type="string" />
+            <Column name="RSP" type="string" />
+            <Column name="ADDRLEN" type="string" />
+            <Column name="TAG" type="string" />
+            <Column name="BAR" type="string" />
+            <Column name="FID" type="string" />
+            <Column name="MISC" type="string" />
+        </Columns>
+    </Resource>
+    
+    <Resource type="LogDB" name="aligned_sb" selector="aligned_sb" path="LOGDB/aligned_sb_logdb">
+        <Columns>
+            <Column name="TIMESTAMP" type="BIGINT unsigned" time_unit="ps" alias="TIME" />
+            <Column name="DIR" type="string" />
+            <Column name="TYPE" type="string" />
+            <Column name="PER" type="string" />
+            <Column name="SPID" type="string" />
+            <Column name="LSPID" type="string" />
+            <Column name="DPID" type="string" />
+            <Column name="LDPID" type="string" />
+            <Column name="OPC" type="string" />
+            <Column name="TAG" type="string" />
+            <Column name="MISC" type="string" />
+            <Column name="EH" type="string" />
+            <Column name="BE" type="string" />
+            <Column name="FID" type="string" />
+            <Column name="BAR" type="string" />
+            <Column name="ADDRLEN" type="string" />
+            <Column name="RSP" type="string" />
+            <Column name="SAI" type="string" />
+            <Column name="ADDRESS" type="string" />
+            <Column name="DATA" type="string" />
+        </Columns>
+    </Resource>
+</Storage_Uploader_config>

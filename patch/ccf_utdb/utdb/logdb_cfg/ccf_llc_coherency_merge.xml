@@ -1,0 +1,59 @@
+<Storage_Uploader_config>
+    <CommonFields>
+        <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+        <Column name="UNIT" type="string" />
+        <Column name="TID" type="string" />
+        <Column name="LID" type="string" />
+        <Column name="PID" type="string" />
+     </CommonFields>
+    <GlobalConfigurations>
+    </GlobalConfigurations>
+
+    <Resource type="text" name="" delimiter="|" selector="llc" path="tlm_post/ccf_replay_base_env/llc_*_trk.log*" >
+        <Columns>
+            <Column name="TIME" type="BIGINT unsigned" time_unit="ps" />
+            <Column name="LLC_SLICE" type="string" alias="UNIT" />
+            <Column name="TID" type="string" />
+            <Column name="LID" type="string" />
+            <Column name="PID" type="string" />
+            <Column name="REJECTED" type="int" />
+            <Column name="ADDRESS" type="string" />
+            <Column name="OPCODE" type="string" />
+            <Column name="ARBCMD" type="string" />
+            <Column name="HIT_MISS" type="string" />
+            <Column name="TAG_ECC" type="string" />
+            <Column name="SET" type="string" />
+            <Column name="WAY" type="string" />
+            <Column name="MAP" type="string" />
+            <Column name="HALF" type="string" />
+            <Column name="STATE" type="string" />
+            <Column name="NEW_STATE" type="string" />
+            <Column name="NEW_MAP" type="string" />
+            <Column name="STATE_WR_WAY" type="string" />
+            <Column name="STATE_IN_WAY" type="string" />
+            <Column name="STATE_VL_WAY" type="string" />
+            <Column name="DATA" type="string" />
+            <Column name="POISON" type="string" />
+            <Column name="ECC" type="string" />
+            <Column name="CV_RD" type="string" />
+            <Column name="CV_WR" type="string" />
+            <Column name="PFVL_RD" type="string" />
+            <Column name="PFVL_WR" type="string" />
+            <Column name="CV_ERR" type="string" />
+            <Column name="EVENT" type="string" />
+            <Column name="HITMISS_VECTOR" type="string" />
+            <Column name="ALL_LINE_STATES" type="string" />
+            <Column name="LRU_RD" type="string" />
+            <Column name="LRU_WR" type="string" />
+        </Columns>
+    </Resource>
+</Storage_Uploader_config>
+
+
+
+
+
+
+
+
+

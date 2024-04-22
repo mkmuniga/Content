@@ -1,0 +1,26 @@
+<Storage_Uploader_config>
+
+	<CommonFields>
+               <Column name="TIME" type="bigint" time_unit="ps" />
+	</CommonFields>
+
+    <Resource type="LogDB" name="cbo0"   path="LOGDB/ccf_cbo0_obs_custom_hw_col_db">
+		<Columns>
+			<Column name="TIME" merge_column="true" />
+		</Columns>
+    </Resource>
+    
+    <Resource type="LogDB" name="cbo1"   path="LOGDB/ccf_cbo1_obs_custom_hw_col_db">
+		<Columns>
+			<Column name="TIME" merge_column="true" />
+		</Columns>
+    </Resource>
+
+    <Resource type="LogDB" name="ncu"   path="LOGDB/ccf_ncu_obs_custom_hw_col_db">
+		<Columns>
+			<Column name="TIME" merge_column="true" />
+		</Columns>
+    </Resource>
+
+</Storage_Uploader_config>
+

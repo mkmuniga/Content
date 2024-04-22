@@ -1,0 +1,22 @@
+Inputs,1,2,3,4,5,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,24,27,28,Expected Interfaces,output from Cpipe,24,25,28,29,30,input to Cpipe,32,33,36,37,38
+Flow Section,Row Number,Row Enable ,Flow ,Bubble,Sad,Curr Opcode,Snoop response,LLC State,CV,Map,MonHit,CN,AvailData,SelfSnoop,SnoopConflict,FwdCnfltO,FreeInvWay,HadReject,CleanEvict,DeadDBP,ReqCV,SRP_en,SRP_HR_Fill,HadBogus,Pref_Promotion,MiscCondition,Next Bubble,IDI_U2C_REQ,IDI_U2C_RSP,IDI_U2C_DATA,UXI_C2U_REQ,UXI_C2U_DATA,UXI_C2U_RSP,CPIPE_REQ,IDI_C2U_RSP,IDI_C2U_DATA,UXI_U2C_REQ,UXI_U2C_RSP,UXI_U2C_DATA
+First Pass,1,1,LLCWB,first,X,LLCWB,X,M,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,b,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,3,1,LLCWB,first,X,LLCWB,X,M,>1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_cv_err=0,b,0,0,0,0,0,0,X,0,0,0,0,0
+Write Back,5,1,LLCWB,b ,X,LLCWB,X,X,X,X,X,X,X,X,X,X,x,X,X,X,X,X,X,X,X,X,c,0,FastGO(core_logic_id),0,0,WbMtoE,0,CmpU,0,0,0,CmpU,0
+Write Back,6,1,LLCWB,c,X,CmpU,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+First Pass,7,1,LLCWB,first,X,LLCWB,X,E/S/I,0,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,a,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,8,1,LLCWB,first,X,LLCWB,X,E/S,>1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_cv_err=0,a,0,0,0,0,0,0,X,0,0,0,0,0
+First Pass,9,1,LLCWB,first,X,LLCWB,X,S/I,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,a,0,0,0,0,0,0,X,0,0,0,0,0
+Write Back,10,1,LLCWB,a,X,LLCWB,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,FASTGO_ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+First Pass,11,1,LLCWB,first,X,LLCWB,X,M/E,1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,f,0,0,0,0,0,0,X,0,0,0,0,0
+Snoop Flow,12,1,LLCWB,f ,X,X,Rsp.*FwdMO,X,X,X,X,X,0,X,X,X,X,X,X,X,X,X,X,X,X,X,j,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+Snoop Flow,14,1,LLCWB,j,X,SNP_RSP,RspIFwdMO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,k,0,FastGO(core_logic_id),0,0,WbMtoI,0,CmpU,0,0,0,CmpU,0
+Snoop Flow,15,1,LLCWB,j,X,SNP_RSP,RspSFwdMO,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,k,0,FastGO(core_logic_id),0,0,WbMtoE,0,CmpU,0,0,0,CmpU,0
+Snoop Flow,16,1,LLCWB,k,X,CmpU,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+Snoop Flow,17,1,LLCWB,f ,X,X,Rsp.*Hit.*/RspSI/RspFlushed,E,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,g,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),0,0,0,0
+Snoop Flow,18,1,LLCWB,g,X,SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,FASTGO_ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+Snoop Flow,19,1,LLCWB,f ,X,X,X,M,X,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,h,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+Snoop Flow,21,1,LLCWB,f ,X,X,Rsp.*FwdMO,X,X,X,X,X,1,X,X,X,X,X,X,X,X,X,X,X,X,X,h,snoop(cv_vector),0,0,0,0,0,SNP_RSP,snoop_response(cv_vector),snoop_response_data(only_from_cv_vector),0,0,0
+Snoop Flow,23,1,LLCWB,h,X,SNP_RSP,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,I,0,FastGO(core_logic_id),0,0,WbMtoE,0,CmpU,0,0,0,CmpU,0
+Snoop Flow,24,1,LLCWB,I,X,CmpU,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,done,0,ExtCmp(core_logic_id),0,0,0,0,X,0,0,0,0,0
+First Pass – had CV err,25,1,LLCWB,first,X,LLCWB,X,M/E,>1,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,had_cv_err=1,f,0,0,0,0,0,0,X,0,0,0,0,0
